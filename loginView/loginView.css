@@ -1,0 +1,183 @@
+html, body {
+    background-image: url('./src/loginBackground.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 0 0 0;
+    font-family: 'NanumSquareRound'
+}
+
+h1 {
+    display: block;
+    margin: 0 0 0 0;
+    padding-top: 40px;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    width: 450px;
+    border-bottom: 3px solid #4B6400;
+    margin: 20px -35;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    background-color: #FFC19C;
+}
+
+#getTerraLogo {
+    position: relative;
+    top: -30px;
+    width: 220px;
+}
+
+#contents {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 10vh);
+}
+
+#loginView {
+    position: relative;
+    background-color: #4B6584;
+    top: 100px;
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+}
+
+#loginSection {
+    display: none;
+    background-color: #ffffff;
+    width: 40%;
+    height: 100%;
+}
+
+#loginSection h1 {
+    position: relative;
+    margin-left: 75px;
+    font-size: 50px;
+}
+
+
+#loginSection.view {
+    display: inline-block;
+}
+
+#loginSection.view-exit {
+    animation: out .3s linear none;
+}
+
+#loginSection.view-enter {
+    animation: in .3s linear none;
+}
+
+#signupSection {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 40%;
+    height: 100%;
+    right: 0px;
+}
+
+#signupSection h1 {
+    position: relative;
+    padding-top: 50px;
+    margin-left: 75px;
+    font-size: 50px;
+}
+
+#signupSection.view {
+    display: inline-block;
+}
+
+#signupSection.view-exit {
+    animation: out .3s linear none;
+}
+
+#signupSection.view-enter {
+    animation: in .3s linear none;
+}
+
+#loginView {
+    box-shadow: 5px 5px 3px 1px #331922;
+    box-shadow: 5px 2px 3px 1px #331922;
+}
+
+@keyframes out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+input[type = "text"] {
+    position: relative;
+    width: 80%;
+    height: 8%;
+    left: calc(50% - 60px);
+    transform: translateX(-50%);
+    background-color: #edefed; 
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+p {
+    position: relative;
+    left: 50px;
+    font-size: 25px;
+    color: #4B6584;
+}
+
+button {
+    position: relative;
+    width: 225px;
+    height: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFC19C;
+    margin-top: 10px;
+}
+
+#checkbox {
+    position: relative;
+    font-size: 18px;
+    left: 60px;
+}
+
+#signup {
+    position: relative;
+    top: 40px;
+    text-decoration: underline #FFC19C;
+    font-size: 18px;
+    cursor: pointer;
+    left: 50px;
+}
+
+#login {
+    position: relative;
+    top: 60px;
+    text-decoration: underline #FFC19C;
+    font-size: 18px;
+    cursor: pointer;
+    left: 90px;
+}
+
+#forget {
+    position: relative;
+    top: 40px;
+    text-decoration: underline #FFC19C;
+    font-size: 18px;
+    left: 160px;
+}
