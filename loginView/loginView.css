@@ -127,6 +127,8 @@ input[type = "text"] {
     outline: none;
     border: none;
     border-radius: 5px;
+    padding-left: 10px;
+    font-size: 30px;
 }
 
 p {
