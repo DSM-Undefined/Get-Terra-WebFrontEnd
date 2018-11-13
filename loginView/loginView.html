@@ -5,6 +5,7 @@
         <meta charset = "uft-8">
     </head>
     <body>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <header>
             <img src = "./src/Get_Terra_logo.png" id = "getTerraLogo">
         </header>
@@ -14,14 +15,14 @@
                     <h1>Login</h1>
                     <p>
                         ID<br/>
-                        <input type = "text">
+                        <input id = "login-Id" type = "text">
                     </p>
                     <p>
                         Password<br/>
-                        <input type = "text">
+                        <input id = "login-Password" type = "password">
                     </p>
                     <p id = "checkbox">remember me<input type="checkbox"></p>
-                    <button>Login</button>
+                    <button id = "loginButton">Login</button>
                     <br>
                     <span id = "signup">계정이 <span style = "color: #CCCC00;">없으신가요?</span></span>
                     <span id = "forget">계정을 <span style = "color: #CCCC00;">잃어버렸나요?</span></span>
@@ -30,17 +31,17 @@
                         <h1>Signup</h1>
                         <p>
                             ID<br/>
-                            <input type = "text">
+                            <input id = "signup-Id" type = "text">
                         </p>
                         <p>
                             Password<br/>
-                            <input type = "text">
+                            <input id = "signup-Password" type = "password">
                         </p>
                         <p>
                             Check Password <br/>
-                            <input type = "text">
+                            <input id = "signup-CheckPassword" type = "password">
                         </p>
-                        <button>Signup</button>
+                        <button id = "signupButton">Signup</button>
                         <span id = "login">계정이 <span style = "color: #CCCC00;">있으신가요?</span></span>
                 </div>
             </div>

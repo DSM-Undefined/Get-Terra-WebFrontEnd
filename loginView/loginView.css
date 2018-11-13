@@ -117,7 +117,7 @@ header {
     100% {opacity: 1;}
 }
 
-input[type = "text"] {
+input[type = "text"], input[type = "password"] {
     position: relative;
     width: 80%;
     height: 8%;
@@ -150,6 +150,10 @@ button {
     border-radius: 20px;
     background-color: #FFC19C;
     margin-top: 10px;
+}
+
+button:active {
+    background-color: #FFC132;
 }
 
 #checkbox {
