@@ -1,0 +1,421 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: 'NanumSquareRound'
+}
+
+body {
+    background-color: #e9e9e9;
+}
+
+#header-wrapper {
+    background-color: #ffc29d;
+    width: 100%;
+    height: 60px;
+}
+
+#header-wrapper > h1 {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    padding: 5px 0px 5px 20px;
+    margin-right: 850px;
+}
+
+#header-wrapper > h1 > a {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+}
+
+#logo_img {
+    display: inline-block;
+    background-image: url('getTerra.logo.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+#logo_letter {
+    display: inline-block;
+    position: absolute;
+    background-image: url('getTerra_letter.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    margin-top: 5px;
+}
+
+#user_info {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 2px solid white;
+    width:200px;
+    height:50px;
+}
+
+.user_img {
+    display: inline-block;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.user_name {
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+    text-align: center;
+}
+
+#main-wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+#list {
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: #4b6584;
+    width: 240px;
+    min-height: calc(100vh - 90px);
+    max-height: calc(100vh - 60px);
+}
+
+#list > div {
+    width: 205px;
+}
+
+#list_user_info {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 3px solid white;
+    width: 100%;
+    height: 90px;
+}
+
+#user_img_B {
+    width: 70px;
+    height: 70px;
+}
+
+#header-list {
+    list-style:none;
+    text-align: center;
+}
+
+#header-list > li {
+    text-align: center;
+    border-bottom: 2px solid white;
+    width: 100%;
+    height: 60px;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 1s, height 2s;
+}
+
+#header-list > li > ul > li:hover {
+    background-color: #4b5584;
+}
+
+#list_submit:hover, #list_user:hover, #list_result:hover {
+    height: 162px;
+}
+
+#header-list > li > ul > li {
+    border-bottom: 1px solid white;
+}
+
+.list_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+#header-list > li > ul > li > p{
+    display: inline-flex;
+    align-items: center;
+    height: 60px;
+}
+
+.arrow {
+    /*background-image: url(arrow수정전.png);
+    background-size: 100%;
+    background-repeat: no-repeat;*/
+    display: inline-flex;
+    align-items: center;
+    font-size: 50px;
+    float: right;
+    width: 30px;
+    height: 60px;
+    transition: color 2s, transform 1.5s;
+}
+
+.arrow:hover {
+    color: #00ff83;
+    transform:rotate(90deg);
+}
+
+#dlswmd {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 210px);
+    min-height: calc(100vh - 90px);
+    max-height: calc(100vh - 60px);
+}
+
+#dlswmd_box1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    font-size: 30PX;
+    background-color: #4b6584;
+    border-radius: 10px;
+    width: 500px;
+    height: 420px;
+}
+
+#dlswmd_box2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    font-size: 28px;
+    background-color: white;
+    border-radius: 10px;
+    width: 250px;
+    height: 350px;
+}
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            font-family: 'NanumSquareRound'
+        }
+
+        body {
+            background-color: #e9e9e9;
+        }
+
+        #header-wrapper {
+            background-color: #ffc29d;
+            width: 100%;
+            height: 60px;
+        }
+
+        #header-wrapper > h1 {
+            display: inline-block;
+            width: 130px;
+            height: 50px;
+            padding: 5px 0px 5px 20px;
+            margin-right: 850px;
+        }
+
+        #header-wrapper > h1 > a {
+            display: inline-block;
+            width: 130px;
+            height: 50px;
+        }
+
+        #logo_img {
+            display: inline-block;
+            background-image: url('getTerra.logo.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        #logo_letter {
+            display: inline-block;
+            position: absolute;
+            background-image: url('getTerra_letter.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 70px;
+            height: 50px;
+            margin-top: 5px;
+        }
+
+        #user_info {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            border-left: 2px solid white;
+            width:200px;
+            height:50px;
+        }
+        
+        .user_img {
+            display: inline-block;
+            margin-left: 10px;
+            background-color: white;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+        }
+
+        .user_name {
+            display: inline-block;
+            margin-left: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        #main-wrapper {
+            display: inline-flex;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+        }
+
+        #list {
+            display: inline-flex;
+            justify-content: center;
+            padding-top: 30px;
+            background-color: #4b6584;
+            width: 240px;
+            min-height: calc(100vh - 90px);
+            max-height: calc(100vh - 60px);
+        }
+        
+        #list > div {
+            width: 205px;
+        }
+
+        #list_user_info {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            border-bottom: 3px solid white;
+            width: 100%;
+            height: 90px;
+        }
+
+        #user_img_B {
+            width: 70px;
+            height: 70px;
+        }
+
+        #header-list {
+            list-style:none;
+            text-align: center;
+        }
+
+        #header-list > li {
+            text-align: center;
+            border-bottom: 2px solid white;
+            width: 100%;
+            height: 60px;
+            color: white;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background-color 1s, height 2s;
+        }
+
+        #header-list > li > ul > li:hover {
+            background-color: #4b5584;
+        }
+
+        #list_submit:hover, #list_user:hover, #list_result:hover {
+            height: 162px;
+        }
+
+        #header-list > li > ul > li {
+            border-bottom: 1px solid white;
+        }
+
+        .list_content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        #header-list > li > ul > li > p{
+            display: inline-flex;
+            align-items: center;
+            height: 60px;
+        }
+        
+        .arrow {
+            /*background-image: url(arrow수정전.png);
+            background-size: 100%;
+            background-repeat: no-repeat;*/
+            display: inline-flex;
+            align-items: center;
+            font-size: 50px;
+            float: right;
+            width: 30px;
+            height: 60px;
+            transition: color 2s, transform 1.5s;
+        }
+        
+        .arrow:hover {
+            color: #00ff83;
+            transform:rotate(90deg);
+        }
+
+        #dlswmd {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 210px);
+            min-height: calc(100vh - 90px);
+            max-height: calc(100vh - 60px);
+        }
+        
+        #dlswmd_box1 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            font-size: 30PX;
+            background-color: #4b6584;
+            border-radius: 10px;
+            width: 500px;
+            height: 420px;
+        }
+
+        #dlswmd_box2 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: black;
+            font-size: 28px;
+            background-color: white;
+            border-radius: 10px;
+            width: 250px;
+            height: 350px;
+        }
+        
