@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="GetTerra_screen.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-wrapper">      
+        <div id="CertificationCode">
+            <div id="code_box1"><h4>인증코드란?</h4><p>플레이어들이 게임에 참가하기위해<br>필요한 코드입니다.<br>이 페이지에서 인증코드를 다시<br>확인 할 수 있습니다.</p></div>                
+            <div id="code_box2">당신의 인증코드는<p class="certification_code">123456</p>입니다</div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="grade_wrapper">
+            <div id="result_header">
+                <h1 id="result_title">등수</h1>
+                <div id="result_title_right">
+                    <h3 id="goto_situation">현황보기</h3>
+                    <div>></div>
+                </div>
+            </div>
+            <div id="result_main">
+                <div>
+                    <div class="result_main_circles" id="result_circle_1">
+                        <div><p id="grade_result_count_1">20</p>개부스<br>(<p id="grade_result_percent_1">8</p>%)</div>
+                    </div>
+                    <div class="stairs" id="stairs_1">1</div>
+                </div>
+                <div>
+                    <div class="result_main_circles" id="result_circle_2">
+                        <div><p id="grade_result_count_2">10</p>개부스<br>(<p id="grade_result_percent_2">4</p>%)</div>
+                    </div>
+                        <div class="stairs" id="stairs_2">2</div>
+                </div>
+                <div>
+                    <div class="result_main_circles" id="result_circle_3">
+                        <div><p id="grade_result_count_3">7</p>개부스<br>(<p id="grade_result_percent_3">2.8</p>%)</div>
+                    </div>
+                    <div class="stairs" id="stairs_3">3</div>
+                </div>
+                <div>
+                    <div class="result_main_circles" id="result_circle_4">
+                        <div><p id="grade_result_count_4">3</p>개부스<br>(<p id="grade_result_percent_4">1.2</p>%)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="situation_wrapper">
+            <div id="situation_header">
+                <h1 id="situation_title">현황</h1>
+                <div id="situation_title_right">
+                    <h3 class="goto_grade">등수보기</h3>
+                    <div>></div>
+                </div>
+            </div>   
+            <div id="situation_main">
+                <div>
+                    <div class="situation_club" id="situation_club_1">동아리명</div>
+                    <div class="situation_club" id="situation_club_2">동아리명</div>
+                    <div class="situation_club" id="situation_club_3">동아리명</div>
+                    <div class="situation_club" id="situation_club_4">동아리명</div>
+                </div>
+                <div>
+                    <div class="situation_club" id="situation_club_5">동아리명</div>
+                    <div class="situation_club" id="situation_club_6">동아리명</div>
+                    <div class="situation_club" id="situation_club_7">동아리명</div>
+                    <div class="situation_club" id="situation_club_8">동아리명</div>
+                </div>
+                <div>
+                    <div class="situation_club" id="situation_club_9">동아리명</div>
+                    <div class="situation_club" id="situation_club_10">동아리명</div>
+                    <div class="situation_club" id="situation_club_11">동아리명</div>
+                    <div class="situation_club" id="situation_club_12">동아리명</div>
+                </div>
+                <div>
+                    <div class="situation_club" id="situation_club_13">동아리명</div>
+                    <div class="situation_club" id="situation_club_14">동아리명</div>
+                    <div class="situation_club" id="situation_club_15">동아리명</div>
+                    <div class="situation_club" id="situation_club_16">동아리명</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="create_game_done">
+            <div id="create_game_done_title">게임이 생성되었습니다</div>
+            <div id="create_game_done_main">
+                <div>인증키 : <p class="certification_code">123456</p></div>
+                <button class="goto_situation" id="create_game_done_button">현황보기</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="booth_wrapper">
+            <div id="booth_header">
+                <h1 id="booth_title">부스</h1>
+            </div>
+            <div id="booth_main">
+                <div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_1">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_1">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_2">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_2">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_3">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_3">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_4">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_4">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_5">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_5">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_6">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_6">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_7">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_7">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_8">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_8">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_9">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_9">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_10">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_10">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_11">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_11">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="문제1">
+                        <div class="booth_main_textBox">
+                            <input type="text" placeholder="부스이름" id="booth_main_boothName_12">
+                            <input type="text" placeholder="부스담당자 이름" id="booth_main_ownerName_12">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button id="view_question">문제 보기</button>
+                    <button id="goto_creat_game">게임 생성하기</button>
+                    <button id="qrCode_downlode">qr코드 다운하로드<img></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="createGame_wrapper">
+            <div id="createGame_header">
+                <h1 id="createGame_title">게임 생성</h1>
+            </div>
+            <div id="createGame_main">
+                <div id="createGame_main_top">
+                    <button id="goto_myQuestion">내가 낸 문제들 ></button>
+                    <div>
+                        <div>
+                            <div class="createGame_top_boothName">부스이름</div>
+                            <div class="createGame_top_question">문제의 내용입니다</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="createGame_main_middle">
+                    <div>
+                        <div>
+                            <p>팀 개수</p><p class="goto_userControl">></p>
+                        </div>
+                        <div>
+                            <div class="img_personX"></div><p>100</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>시간 설정</p><p class="goto_userControl">></p>
+                        </div>
+                        <div>
+                            <div class="img_clock"></div>
+                            <div>
+                                <p id="createGame_startTime">00 : 00</p>
+                                <p id="createGame_endTime">~ 00 : 00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="createGame_main_bottom">
+                    <button>게임 생성하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="userControl_wrapper">
+            <div id="userControl_header">
+                <h1 id="userControl_title">유저 관리</h1>
+            </div>
+            <div id="userControl_main">
+                <div id="userControl_main_top">
+                    <div>팀설정</div>
+                    <div>
+                        <p>팀 개수를 설정하세요</p>
+                        <div class="img_personX"></div> <input type="number" id="userControl_countTeam" value="0">
+                    </div>
+                </div>
+                <div id="userControl_main_middle">
+                    <div>시간 설정</div>
+                    <div>
+                        <p>시작/종료시간을 설정하세요</p>
+                        <div>
+                            <div class="img_clock"></div>
+                            <input type="number" id="userControl_startHH" value="0">
+                            <input type="number" id="userControl_startH" value="0">
+                            <p>:</p>
+                            <input type="number" id="userControl_startMM" value="0">
+                            <input type="number" id="userControl_startM" value="0">
+                            <p>~</p>
+                            <input type="number" id="userControl_endHH" value="0">
+                            <input type="number" id="userControl_endH" value="0">
+                            <p>:</p>
+                            <input type="number" id="userControl_endMM" value="0">
+                            <input type="number" id="userControl_endM" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div id="userControl_main_bottom">
+                    <button>제출하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
