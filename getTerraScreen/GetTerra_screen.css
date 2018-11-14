@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockqu
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: 'NanumSquareRound';
     vertical-align: baseline;
 }
 
@@ -36,8 +36,8 @@ body {
     margin-right: 2px;
     border-radius: 10px;
     box-shadow: 2px 2px #c3c3c3; 
-    width: 500px;
-    height: 420px;
+    width: 750px;
+    height: 630px;
     background-color: #4b6584;
     color: white;
     text-align: center;
@@ -55,8 +55,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 250px;
-    height: 350px;
+    width: 375px;
+    height: 475px;
     background-color: white;
     color: #4b6584;
     border-radius: 10px;
@@ -335,8 +335,8 @@ body {
 }
 
 #booth_wrapper {
-    width: 1000px;
-    height: 520px;
+    width: 95%;
+    height: 95%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 2px #c3c3c3;
@@ -390,8 +390,8 @@ body {
     margin: 0 0 80px 70px;
     border-radius: 5px;
     border: 2px solid #707070;
-    width: 50px;
-    height: 15px;
+    width: 100px;
+    height: 30px;
     color: #4b6584;
     text-align: center;
 }

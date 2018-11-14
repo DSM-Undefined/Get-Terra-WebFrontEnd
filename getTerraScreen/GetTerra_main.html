@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="GetTerra_main.css">
-    <title>Document</title>
+    <link rel = "stylesheet" href = "GetTerra_screen.css">
+    <title>GetTerra Admin Page</title>
 </head>
 <body>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <div id="header-wrapper">
         <h1>
             <a href="#">
@@ -38,8 +40,8 @@
                             <li>
                                 <p>문제 제출</p><div class="arrow">></div>
                             </li>
-                            <li class="list_content">객관식</li>
-                            <li class="list_content">OX</li>
+                            <li id = "problem" class="list_content">객관식</li>
+                            <li id = "problemOX" class="list_content">OX</li>
                         </ul>
                     </li>
                     <li id="list_user">
@@ -47,8 +49,8 @@
                             <li>
                                 <p>유저 관리</p><div class="arrow">></div>
                             </li>
-                            <li class="list_content">팀 설정</li>    
-                            <li class="list_content">시간 설정</li>
+                            <li id = "teamSet" class="list_content">팀 설정</li>    
+                            <li id = "timeSet" class="list_content">시간 설정</li>
                         </ul>
                     </li>
                     <li id="list_booth">
@@ -63,8 +65,8 @@
                             <li>
                                 <p>결과</p><div class="arrow">></div>
                             </li>
-                            <li class="list_content">현황</li>
-                            <li class="list_content">등수</li>
+                            <li id = "state" class="list_content">현황</li>
+                            <li id = "price" class="list_content">등수</li>
                         </ul>
                     </li>
                     <li id="list_key">
@@ -77,9 +79,11 @@
                 </ul>
             </div>
         </div>
+        <div id = "main_wrapper">
+        </div>
     </div>
     <div id="footer-wrapper"></div>
-    <script>
+    <script src = "GetTerraMain.js">
         
     </script>
 </body>
