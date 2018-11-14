@@ -21,12 +21,10 @@ function boothButtonFunction() {
         }
     })
 
-    axios.post("http://52.78.227.70:5000/booth", {params : {
-        "edits" : postList
-        },
-        header : { "Content-Type": "application/json",
-        "Authorization": "Bearer " + token}
-    }, 
+    axios.post("http://52.78.227.70:5000/booth",  {"edits" : postList},{
+        headers: { "Content-Type": "application/json",
+        "Authorization": "Bearer " + token }
+    },
     )
     .then(response => {
         console.log(response)
@@ -148,7 +146,7 @@ function listKeyFunction() {
     main.innerHTML = 
     `<div id="CertificationCode">
     <div id="code_box1"><h4>인증코드란?</h4><p>플레이어들이 게임에 참가하기위해<br>필요한 코드입니다.<br>이 페이지에서 인증코드를 다시<br>확인 할 수 있습니다.</p></div>                
-    <div id="code_box2">당신의 인증코드는<p id="certification_code"></p>입니다</div>
+    <div id="code_box2">당신의 인증코드는<p id="certification_code">000000</p>입니다</div>
     </div>`
     
 
