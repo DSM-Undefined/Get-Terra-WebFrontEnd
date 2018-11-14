@@ -30,7 +30,8 @@ function loginFunction() {
     )
     .then(response => {
         alert("로그인에 성공하셨습니다.")
-    
+        //console.log(typeof response.data.access_token)
+        localStorage.setItem("JWT", response.data.access_token)
     })
     .catch(reject => {
         alert("로그인에 실패하셨습니다.")
