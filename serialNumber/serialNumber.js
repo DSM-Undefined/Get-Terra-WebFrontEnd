@@ -10,8 +10,6 @@ window.onload = axios.get('http://52.78.227.70:5000/session/new', {
 .then(response => {
     alert("인증코드 발급에 성공하셨습니다.")
     successNode.nodeValue = response.data.serial_number;
-    //console.log(typeof response.data.access_token)
-    //localStorage.setItem("JWT", response.data.access_token)
 })
 .catch(reject => {
     failedNode.childNodes[0].nodeValue = "인증코드 발급 실패"
