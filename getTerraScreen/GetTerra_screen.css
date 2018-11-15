@@ -151,22 +151,6 @@ body {
     display: inline-block;
 }
 
-#result_circle_1 {
-    background:linear-gradient( to bottom, #ffeb8f, #ffda8f );
-}
-
-#result_circle_2 {
-    background:linear-gradient( to bottom, #a4a6e6, #a4cfe6 );
-}
-
-#result_circle_3 {
-    background:linear-gradient( to bottom, #ce96eb, #9f82e1 );
-}
-
-#result_circle_4 {
-    background:linear-gradient( to bottom, #87df91, #a2e5a9 );
-}
-
 .stairs {
     display: inline-flex;
     align-items: flex-start;

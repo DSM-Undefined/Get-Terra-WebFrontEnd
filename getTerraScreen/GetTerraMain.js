@@ -6,6 +6,18 @@ let booth = document.getElementById('list_booth');
 let token = localStorage.getItem('JWT')
 let price = document.getElementById('price')
 let state = document.getElementById('state')
+let circle1;
+let circle2;
+let circle3;
+let circle4;
+let grade1;
+let grade2;
+let grade3;
+let grade4;
+let gradeper1;
+let gradeper2;
+let gradeper3;
+let gradeper4;
 let answerElement;
 let wapper1 
 let wapper2 
@@ -32,29 +44,42 @@ function priceFunction() {
             <div id="result_main">
                 <div>
                     <div class="result_main_circles" id="result_circle_1">
-                        <div><p id="grade_result_count_1">20</p>개부스<br>(<p id="grade_result_percent_1">8</p>%)</div>
+                        <div><p id="grade_result_count_1">0</p>개부스<br>(<p id="grade_result_percent_1">0</p>%)</div>
                     </div>
                     <div class="stairs" id="stairs_1">1</div>
                 </div>
                 <div>
                     <div class="result_main_circles" id="result_circle_2">
-                        <div><p id="grade_result_count_2">10</p>개부스<br>(<p id="grade_result_percent_2">4</p>%)</div>
+                        <div><p id="grade_result_count_2">0</p>개부스<br>(<p id="grade_result_percent_2">0</p>%)</div>
                     </div>
                         <div class="stairs" id="stairs_2">2</div>
                 </div>
                 <div>
                     <div class="result_main_circles" id="result_circle_3">
-                        <div><p id="grade_result_count_3">7</p>개부스<br>(<p id="grade_result_percent_3">2.8</p>%)</div>
+                        <div><p id="grade_result_count_3">0</p>개부스<br>(<p id="grade_result_percent_3">0</p>%)</div>
                     </div>
                     <div class="stairs" id="stairs_3">3</div>
                 </div>
                 <div>
                     <div class="result_main_circles" id="result_circle_4">
-                        <div><p id="grade_result_count_4">3</p>개부스<br>(<p id="grade_result_percent_4">1.2</p>%)</div>
+                        <div><p id="grade_result_count_4">0</p>개부스<br>(<p id="grade_result_percent_4">0</p>%)</div>
                     </div>
                 </div>
             </div>
         `
+        circle1 = document.getElementById('result_circle_1')
+        circle2 = document.getElementById('result_circle_2')
+        circle3 = document.getElementById('result_circle_3')
+        circle4 = document.getElementById('result_circle_4')
+        grade1 = document.getElementById('grade_result_count_1')
+        grade2 = document.getElementById('grade_result_count_2')
+        grade3 = document.getElementById('grade_result_count_3')
+        grade4 = document.getElementById('grade_result_count_4')
+        gradeper1 = document.getElementById('grade_result_percent_1')
+        gradeper2 = document.getElementById('grade_result_percent_2')
+        gradeper3 = document.getElementById('grade_result_percent_3')
+        gradeper4 = document.getElementById('grade_result_percent_4')
+
 
         axios.get('http://ec2.istruly.sexy:5000/status/ranking', {
             headers: {
@@ -63,6 +88,23 @@ function priceFunction() {
         })
         .then(response => {
             resultList = response.data.list
+            resultList.sort(function (a, b) {
+                return a.ownCount - b.ownCount
+            })
+
+            grade1.childNodes[0].nodeValue = resultList[0].ownCount
+            circle1.style.backgroundColor = resultList[0].teamId
+            gradeper1.childNodes[0].nodeValue = resultList[0].percent
+            grade2.childNodes[0].nodeValue = resultList[1].ownCount
+            circle2.style.backgroundColor = resultList[1].teamId
+            gradeper2.childNodes[0].nodeValue = resultList[1].percent
+            grade3.childNodes[0].nodeValue = resultList[2].ownCount
+            circle3.style.backgroundColor = resultList[2].teamId
+            gradeper3.childNodes[0].nodeValue = resultList[2].percent
+            grade4.childNodes[0].nodeValue = resultList[3].ownCount
+            circle4.style.backgroundColor = resultList[3].teamId
+            gradeper4.childNodes[0].nodeValue = resultList[3].percent
+
         })
 }
 
