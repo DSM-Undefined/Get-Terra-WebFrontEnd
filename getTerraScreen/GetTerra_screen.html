@@ -277,7 +277,134 @@
                     </div>
                 </div>
                 <div id="userControl_main_bottom">
-                    <button>제출하기</button>
+                    <button id="userControl_submit">제출하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="multipleQuizSubmit_wrapper">
+            <div id="multipleQuizSubmit_header">
+                <h1 id="multipleQuizSubmit_title">객관식 문제 제출</h1>
+            </div>
+            <div id="multipleQuizSubmit_main">
+                <div id="multipleQuizSubmit_main_top">
+                    <textarea type="text" id="multipleQuizSubmit_valueSubmit" placeholder="문제를 입력하세요"></textarea>
+                </div>
+                <div id="multipleQuizSubmit_main_middle">
+                    <div>
+                        <p>1</p>
+                        <input type="text" id="multipleQuizSubmit_answer_1" placeholder="답안을 입력하세요">
+                    </div>
+                    <div>
+                        <p>2</p>
+                        <input type="text" id="multipleQuizSubmit_answer_2" placeholder="답안을 입력하세요">
+                    </div>
+                    <div>
+                        <p>3</p>
+                        <input type="text" id="multipleQuizSubmit_answer_3" placeholder="답안을 입력하세요">
+                    </div>
+                    <div>
+                        <p>4</p>
+                        <input type="text" id="multipleQuizSubmit_answer_4" placeholder="답안을 입력하세요">
+                    </div>
+                </div>
+                <div id="multipleQuizSubmit_main_bottom">
+                    <button id="multipleQuiz_submit">제출하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="quizSubmit_wrapper">
+            <div id="quizSubmit_header">
+                <h1 id="quizSubmit_title">문제 제출</h1>
+            </div>
+            <div id="quizSubmit_main">
+                <div>
+                    <button id="goto_multipleQuiz">객관식 문제제출</button>
+                    <button id="goto_oxQuiz">OX 문제제출</button>
+                </div>
+                <div>
+                    <div id="quizSubmit_myQuizzes_title">내가 낸 문제들</div>
+                    <div id="quizSubmit_myQuizzes_box">
+                        <div>
+                            <div class="quizSubmit_myQuizzes_type">객관식</div>
+                            <div class="quizSubmit_myQuizzes">문제의 내용입니다</div>
+                        </div>
+                        <div>
+                            <div class="quizSubmit_myQuizzes_type">객관식</div>
+                            <div class="quizSubmit_myQuizzes">문제의 내용입니다</div>
+                        </div>
+                        <div>
+                            <div class="quizSubmit_myQuizzes_type">객관식</div>
+                            <div class="quizSubmit_myQuizzes">문제의 내용입니다</div>
+                        </div>
+                        <div>
+                            <div class="quizSubmit_myQuizzes_type">객관식</div>
+                            <div class="quizSubmit_myQuizzes">문제의 내용입니다</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div id="mainPage_wrapper">
+            <div id="mainPage_1">
+                <div id="mainPage_gotoQuizSubmit_wrapper">
+                    <div id="mainPage_gotoQuizSubmit_title">문제 제출></div>
+                    <div>
+                        <div id="mainPage_gotoQuizSubmit_button">내가 낸 문제 보기></div>
+                        <div id="mainPage_gotoQuizSubmit_myQuiz">가장 최근에 낸 문제</div>
+                    </div>
+                    <div>
+                        <button id="mainPage_gotoMultipleQuiz">객관식 문제내기></button>
+                        <button id="mainPage_gotoOxQuiz">OX 문제내기></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mainPage_2">
+                <div id="mainPage_2_1">
+                    <div id="mainPage_gotoUserControl_wrapper">
+                        <div id="mainPage_gotoUserControl_title">유저 관리></div>
+                        <div id="mainPage_gotoUserControl_content">
+                            <div>
+                                <div id="img_personX"></div><p id="mainPage_userControl_userCount">100</p>
+                            </div>
+                            <div>
+                                <div id="img_clock"></div>
+                                <p id="mainPage_createGame_startTime">00 : 00</p>
+                                <p id="mainPage_createGame_endTime">~ 00 : 00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainPage_gotoBooth_wrapper">
+                        <div id="mainPage_gotoBooth_title">부스></div>
+                        <div>
+                            <div id="mainPage_latelyAddBooth_1">최근에 추가한 부스명</div>
+                            <div id="mainPage_latelyAddBooth_2">최근에 추가한 부스명</div>
+                            <div id="mainPage_latelyAddBooth_3">최근에 추가한 부스명</div>
+                            <div id="mainPage_latelyAddBooth_4">최근에 추가한 부스명</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainPage_2_2">
+                    <div id="mainPage_situationResult_wrapper">
+                        <div id="mainPage_gotoSituration_wrapper">
+                            <div id="mainPage_gotoSituration_title">현황></div>
+                            <div>
+                                <div id="mainPage_gotoSituration_boothName">부스이름</div>
+                            </div>
+                        </div>
+                        <div id="mainPage_gotoResult_wrapper">
+                            <div id="mainPage_gotoResult_title">등수></div>
+                            <div>
+                                <div id="img_crown"></div>
+                                <div><p id="mainPage_gotoResult_boothGrade">20</p>개부스<br>(<p id="mainPage_gotoResult_boothGradePercent">20</p>%)</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
