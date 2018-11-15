@@ -45,14 +45,14 @@ function signupFunction() {
         axios.post('http://52.78.227.70:5000/signup', {
             "userId": signupID.value,
             "password": signupPassword.value,
-        }, {
-            headers: {"Content-Type": "application/json"}
-        },
+        }
         )
-        .then(response => {
+        .then(() => {
             alert("회원가입에 성공하셨습니다.")
         })
-        .catch(alert("회원가입에 실패하셨습니다."))
+        .catch(()=> {
+            alert("회원가입에 실패하셨습니다.")
+        })
     }
 }
 

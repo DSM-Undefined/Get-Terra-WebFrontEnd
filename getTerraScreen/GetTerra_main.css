@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockqu
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: 'NanumSquareRound';
     vertical-align: baseline;
 }
 
@@ -56,6 +56,7 @@ body {
 }
 
 #user_info {
+    position: absolute;
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -63,6 +64,7 @@ body {
     width:200px;
     height:50px;
     margin: 5px 0;
+    right: 100px;
 }
 
 .user_img {
@@ -98,10 +100,6 @@ body {
     cursor: pointer;
 }
 
-#logout:hover {
-    animation: color-change 3s 1s infinite cubic-bezier(0.745, 1, 0.275, 0) alternate;
-}
-
 @keyframes color-change {
     0% {
         color: #b651ff;
@@ -130,6 +128,7 @@ body {
     width: 100%;
     height: auto;
 }
+
 
 #list {
     display: inline-flex;
@@ -176,14 +175,18 @@ body {
     color: white;
     cursor: pointer;
     overflow: hidden;
-    transition: background-color 1s, height 2s;
+    transition: background-color .3s, height .6s;
 }
 
 #header-list > li > ul > li:hover {
     background-color: #4b5584;
 }
 
-#list_submit:hover, #list_user:hover, #list_result:hover {
+#list_submit:hover, #list_user:hover { 
+    height: 110px;
+}
+
+#list_result:hover {
     height: 162px;
 }
 
@@ -214,12 +217,6 @@ body {
     float: right;
     width: 30px;
     height: 60px;
-    transition: color 2s, transform 1.5s;
-}
-
-.arrow:hover {
-    color: #41b883;
-    transform:rotate(90deg);
 }
 
 #CertificationCode {
@@ -240,8 +237,8 @@ body {
     margin-right: 2px;
     border-radius: 10px;
     box-shadow: 2px 2px #c3c3c3; 
-    width: 500px;
-    height: 420px;
+    width: 1000px;
+    height: 840px;
     background-color: #4b6584;
     color: white;
     text-align: center;
@@ -260,8 +257,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 250px;
-    height: 350px;
+    width: 500px;
+    height: 700px;
     background-color: white;
     color: #4b6584;
     border-radius: 10px;
@@ -272,4 +269,14 @@ body {
 
 #code_key {
     font-size: 35px;
+}
+
+#main_wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 210px);
+    min-height: calc(100vh - 90px);
+    max-height: calc(100vh - 60px);
 }

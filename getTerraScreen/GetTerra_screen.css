@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockqu
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: 'NanumSquareRound';
     vertical-align: baseline;
 }
 
@@ -36,8 +36,8 @@ body {
     margin-right: 2px;
     border-radius: 10px;
     box-shadow: 2px 2px #c3c3c3; 
-    width: 500px;
-    height: 420px;
+    width: 750px;
+    height: 630px;
     background-color: #4b6584;
     color: white;
     text-align: center;
@@ -55,8 +55,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 250px;
-    height: 350px;
+    width: 375px;
+    height: 475px;
     background-color: white;
     color: #4b6584;
     border-radius: 10px;
@@ -335,8 +335,8 @@ body {
 }
 
 #booth_wrapper {
-    width: 1000px;
-    height: 520px;
+    width: 95%;
+    height: 95%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 2px #c3c3c3;
@@ -390,8 +390,8 @@ body {
     margin: 0 0 80px 70px;
     border-radius: 5px;
     border: 2px solid #707070;
-    width: 50px;
-    height: 15px;
+    width: 100px;
+    height: 30px;
     color: #4b6584;
     text-align: center;
 }
@@ -601,8 +601,8 @@ body {
 }
 
 #userControl_wrapper {
-    width: 1000px;
-    height: 520px;
+    width: 95%;
+    height: 95%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 2px #c3c3c3;
@@ -624,23 +624,19 @@ body {
 
 #userControl_main {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     width: calc(100% - 40px);
     height: calc(100% - 98px);
     padding: 10px 20px 10px 20px;
     color: #4b6584;
 }
 
-#userControl_main_top {
-    width: 50%;
-    height: 40%;
-}
 
 #userControl_main_middle {
-    width: 50%;
-    height: 45%;
+    width: 60%;
+    height: 55%;
 }
 
 #userControl_main_bottom {
@@ -656,7 +652,7 @@ body {
     padding: 5px 0 20px 40px;
     width: calc(100% - 40px);
     height: calc(25% - 25px);
-    font-size: 25px;
+    font-size: 50px;
 }
 
 #userControl_main > div > div:nth-child(2) {
@@ -672,6 +668,12 @@ body {
     font-size: 30px;
 }
 
+#userControl_main_bottom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #userControl_main_middle > div > div {
     display: inline-flex;
     flex-direction: row;
@@ -681,9 +683,9 @@ body {
 }
 
 #userControl_main_middle > div > div > input {
-    margin: 0 2px;
-    width: 40px;
-    height: 60px;
+    margin: 30px 2px;
+    width: 70px;
+    height: 90px;
     text-align: center;
     font-size: 30px;
 }
@@ -694,6 +696,7 @@ body {
     font-size: 40px;
 }
 
+<<<<<<< HEAD
 #userControl_submit {
     border: 0;
     border-radius: 10px;
@@ -1096,6 +1099,11 @@ body {
     color: white;
     font-size: 25px;
     text-align: center;
+    transition: opacity 0.5s;
+}
+
+#mainPage_gotoOxQuiz:hover {
+    opacity: 0;
 }
 
 #mainPage_userControl_userCount {
@@ -1181,4 +1189,9 @@ body {
 
 #mainPage_gotoResult_wrapper > div:nth-child(2) > div > p {
     display: inline-block;
+=======
+#userControl_main_bottom > button {
+    width: 20%;
+    height: 50px;
+>>>>>>> ee378e4b9db25323fe4a87bfb323f998802edcfe
 }
