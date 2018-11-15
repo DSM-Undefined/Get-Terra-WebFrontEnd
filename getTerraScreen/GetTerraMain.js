@@ -4,12 +4,147 @@ let listKey = document.getElementById('list_key');
 let main = document.getElementById('main_wrapper');
 let booth = document.getElementById('list_booth');
 let token = localStorage.getItem('JWT')
+let price = document.getElementById('price')
+let state = document.getElementById('state')
 let answerElement;
-
+let wapper1 
+let wapper2 
+let wapper3 
+let wapper4 
+let stringHtml = [''];
 let boothButton;
 let postList = [];
 let boothList = [];
+let resultList = [];
 let node;
+let l = 0;
+
+function priceFunction() {
+    main.innerHTML = `
+    <div id="grade_wrapper">
+            <div id="result_header">
+                <h1 id="result_title">등수</h1>
+                <div id="result_title_right">
+                    <h3 id="goto_situation">현황보기</h3>
+                    <div>></div>
+                </div>
+            </div>
+            <div id="result_main">
+                <div>
+                    <div class="result_main_circles" id="result_circle_1">
+                        <div><p id="grade_result_count_1">20</p>개부스<br>(<p id="grade_result_percent_1">8</p>%)</div>
+                    </div>
+                    <div class="stairs" id="stairs_1">1</div>
+                </div>
+                <div>
+                    <div class="result_main_circles" id="result_circle_2">
+                        <div><p id="grade_result_count_2">10</p>개부스<br>(<p id="grade_result_percent_2">4</p>%)</div>
+                    </div>
+                        <div class="stairs" id="stairs_2">2</div>
+                </div>
+                <div>
+                    <div class="result_main_circles" id="result_circle_3">
+                        <div><p id="grade_result_count_3">7</p>개부스<br>(<p id="grade_result_percent_3">2.8</p>%)</div>
+                    </div>
+                    <div class="stairs" id="stairs_3">3</div>
+                </div>
+                <div>
+                    <div class="result_main_circles" id="result_circle_4">
+                        <div><p id="grade_result_count_4">3</p>개부스<br>(<p id="grade_result_percent_4">1.2</p>%)</div>
+                    </div>
+                </div>
+            </div>
+        `
+
+        axios.get('http://ec2.istruly.sexy:5000/status/ranking', {
+            headers: {
+                "Authorization" : "Bearer " + token
+            }
+        })
+        .then(response => {
+            resultList = response.data.list
+        })
+}
+
+function stateFunction() {
+    main.innerHTML = `
+    <div id="mainPage_situationResult_wrapper">
+    <div id="situation_wrapper">
+    <div id="situation_header">
+        <h1 id="situation_title">현황</h1>
+        <div id="situation_title_right">
+            <h3 class="goto_grade">등수보기</h3>
+            <div>></div>
+        </div>
+    </div>   
+    <div id="situation_main">
+        <div id = "s1m">
+        </div>
+        <div id = "s2m">
+        </div>
+        <div id = "s3m">
+        </div>
+        <div id = "s4m">
+        </div>
+    </div>
+                        </div>
+                    `
+    wapper1 = document.getElementById('s1m')
+    wapper2 = document.getElementById('s2m')
+    wapper3 = document.getElementById('s3m')
+    wapper4 = document.getElementById('s4m')
+
+    stringHtml[0] = ['']
+    stringHtml[1] = ['']
+    stringHtml[2] = ['']
+    stringHtml[3] = ['']
+    axios.get('http://ec2.istruly.sexy:5000/status/booth', {
+        headers : {
+            "Authorization" : "Bearer " + token
+        } 
+    })
+    .then(response => {
+        l = 0;
+        console.log(response)
+        response.data.map(i => {
+            l++;
+            stringHtml[ Math.floor((l-1)/4) ] +=
+            `<div style = "background-color: ${i.ownTeam};" class="situation_club">${i.boothName}</div>`
+        
+        })
+        wapper1.innerHTML = stringHtml[0]
+        wapper2.innerHTML = stringHtml[1]
+        wapper3.innerHTML = stringHtml[2]
+        wapper4.innerHTML = stringHtml[3]
+    })
+
+    setInterval(() => {
+        stringHtml[0] = ['']
+        stringHtml[1] = ['']
+        stringHtml[2] = ['']
+        stringHtml[3] = ['']
+        axios.get('http://ec2.istruly.sexy:5000/status/booth', {
+            headers : {
+                "Authorization" : "Bearer " + token
+            } 
+        })
+        .then(response => {
+            l = 0;
+            console.log(response)
+            response.data.map(i => {
+                l++;
+                stringHtml[ Math.floor((l-1)/4) ] +=
+                `<div class="situation_club">${i.boothName}</div>`
+            
+            })
+            wapper1.innerHTML = stringHtml[0]
+            wapper2.innerHTML = stringHtml[1]
+            wapper3.innerHTML = stringHtml[2]
+            wapper4.innerHTML = stringHtml[3]
+        })
+    }, 6000)
+    
+}
 
 function problemFunction() {
     main.innerHTML = `
@@ -84,7 +219,7 @@ let problemButton = document.getElementById('multipleQuiz_submit')
         console.log('a')
         let answer = answerElement.parentNode.childNodes[3].value
 
-    axios.post('http://52.78.227.70:5000/problem', {
+    axios.post('http://http://ec2.istruly.sexy:5000/problem', {
         "edits": [
             {
                 "content" :  content.value,
@@ -152,7 +287,7 @@ function timeSetFunction() {
         console.log("start " + day + " " + start,
                     "    end " + day + " " + end,)
 
-        axios.put('http://52.78.227.70:5000/set-time', {
+        axios.put('http://http://ec2.istruly.sexy:5000/set-time', {
             "start" : day + " " + start,
             "end" : day + " " + end,
         },  {headers: { "Content-Type": "application/json",
@@ -179,7 +314,7 @@ function boothButtonFunction() {
         }
     })
 
-    axios.post("http://52.78.227.70:5000/booth",  {"edits" : postList},{
+    axios.post("http://ec2.istruly.sexy:5000/booth",  {"edits" : postList},{
         headers: { "Content-Type": "application/json",
         "Authorization": "Bearer " + token }
     },
@@ -311,7 +446,7 @@ function listKeyFunction() {
     let successNode = document.getElementById('certification_code').firstChild;
     let failedNode = document.getElementById('code_box2');
 
-    (() => axios.get('http://52.78.227.70:5000/session/new', {    
+    (() => axios.get('http://ec2.istruly.sexy:5000/session/new', {    
         headers: { "Content-Type": "application/json",
                 "Authorization": "Bearer " + token}
     },
@@ -333,3 +468,5 @@ problem.addEventListener('click', problemFunction)
 listKey.addEventListener('click', listKeyFunction)
 timeSet.addEventListener('click', timeSetFunction)
 booth.addEventListener('click', boothFunction)
+price.addEventListener('click', priceFunction)
+state.addEventListener('click', stateFunction)

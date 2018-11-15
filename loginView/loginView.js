@@ -21,7 +21,7 @@ loginButton.addEventListener('click', loginFunction)
 signupButton.addEventListener('click', signupFunction)
 
 function loginFunction() {
-    axios.post('http://52.78.227.70:5000/login', {
+    axios.post('http://ec2.istruly.sexy:5000/login', {
         "userId": loginID.value,
         "password": loginPassword.value,
     }, {
@@ -42,7 +42,7 @@ function signupFunction() {
     if(signupCheckPassword.value !== signupPassword.value)
         alert("비밀번호와 같지 않습니다!")
     else {
-        axios.post('http://52.78.227.70:5000/signup', {
+        axios.post('http://ec2.istruly.sexy:5000/signup', {
             "userId": signupID.value,
             "password": signupPassword.value,
         }
