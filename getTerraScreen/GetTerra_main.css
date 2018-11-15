@@ -129,6 +129,7 @@ body {
     height: auto;
 }
 
+
 #list {
     display: inline-flex;
     justify-content: center;
@@ -181,7 +182,11 @@ body {
     background-color: #4b5584;
 }
 
-#list_submit:hover, #list_user:hover, #list_result:hover {
+#list_submit:hover, #list_user:hover { 
+    height: 110px;
+}
+
+#list_result:hover {
     height: 162px;
 }
 

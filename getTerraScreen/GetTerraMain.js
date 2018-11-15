@@ -1,5 +1,5 @@
 let problem = document.getElementById('problem');
-let problemOX = document.getElementById('problemOX');
+let timeSet = document.getElementById('timeSet');
 let listKey = document.getElementById('list_key');
 let main = document.getElementById('main_wrapper');
 let booth = document.getElementById('list_booth');
@@ -8,6 +8,65 @@ let boothButton;
 let postList = [];
 let boothList = [];
 let node;
+
+function timeSetFunction() {
+    main.innerHTML = `
+    <div id="userControl_wrapper">
+    <div id="userControl_header">
+        <h1 id="userControl_title">유저 관리</h1>
+    </div>
+    <div id="userControl_main">
+        <div id="userControl_main_middle">
+            <div>시간 설정</div>
+            <div>
+                <p>시작/종료시간을 설정하세요</p>
+                <div>
+                    <div class="img_clock"></div>
+                    <input type="number" min = "0" max = "2" id="userControl_startHH" value="0">
+                    <input type="number" min = "0" max = "9" id="userControl_startH" value="0">
+                    <p>:</p>
+                    <input type="number" min = "0" max = "5" id="userControl_startMM" value="0">
+                    <input type="number" min = "0" max = "9" id="userControl_startM" value="0">
+                    <p>~</p>
+                    <input type="number" min = "0" max = "2" id="userControl_endHH" value="0">
+                    <input type="number" min = "0" max = "9" id="userControl_endH" value="0">
+                    <p>:</p>
+                    <input type="number" min = "0" max = "5" id="userControl_endMM" value="0">
+                    <input type="number" min = "0" max = "9" id="userControl_endM" value="0">
+                </div> 
+            </div>
+        </div>
+        <div id="userControl_main_bottom">
+            <button id = "userControl_main_button">제출하기</button>
+        </div>
+    </div>
+</div> 
+    `
+
+    let userControlButton = document.getElementById('userControl_main_button')
+    userControlButton.addEventListener('click', userControlButtonFunction)
+
+    function userControlButtonFunction() {
+        let start = document.getElementById('userControl_startHH').value + document.getElementById('userControl_startH').value + ":" + document.getElementById('userControl_startMM').value + document.getElementById('userControl_startM').value + ":00"
+    let end = document.getElementById('userControl_endHH').value + document.getElementById('userControl_endH').value + ":" + document.getElementById('userControl_endMM').value + document.getElementById('userControl_endM').value + ":00"
+        let date = new Date();
+        let dayYear = date.getFullYear();
+        let dayMonth = date.getMonth() + 1;
+        let dayDay = date.getDate();
+        let day = dayYear + '-' + dayMonth + '-' + dayDay
+        console.log(dayYear)
+        console.log("start " + day + " " + start,
+                    "    end " + day + " " + end,)
+
+        axios.put('http://52.78.227.70:5000/set-time', {
+            "start" : day + " " + start,
+            "end" : day + " " + end,
+        },  {headers: { "Content-Type": "application/json",
+        "Authorization": "Bearer " + token }
+    },)
+        .then(alert("시간 설정에 성공하셨습니다!"))
+    }
+}
 
 function boothButtonFunction() {
     for(let i = 0; i < 12; i++) {
@@ -169,9 +228,8 @@ function listKeyFunction() {
         alert("인증코드 발급에 실패하셨습니다.")
         })
     )();
-    console.log('aa')
 }
 
 listKey.addEventListener('click', listKeyFunction)
-//problemOX.addEventListener('click', problemOXFunction)
+timeSet.addEventListener('click', timeSetFunction)
 booth.addEventListener('click', boothFunction)
