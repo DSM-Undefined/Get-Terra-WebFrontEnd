@@ -4,10 +4,104 @@ let listKey = document.getElementById('list_key');
 let main = document.getElementById('main_wrapper');
 let booth = document.getElementById('list_booth');
 let token = localStorage.getItem('JWT')
+let answerElement;
+
 let boothButton;
 let postList = [];
 let boothList = [];
 let node;
+
+function problemFunction() {
+    main.innerHTML = `
+    <div id="multipleQuizSubmit_wrapper">
+    <div id="multipleQuizSubmit_header">
+        <h1 id="multipleQuizSubmit_title">객관식 문제 제출</h1>
+    </div>
+    <div id="multipleQuizSubmit_main">
+        <div id="multipleQuizSubmit_main_top">
+            <textarea type="text" id="multipleQuizSubmit_valueSubmit" placeholder="문제를 입력하세요"></textarea>
+        </div>
+        <div id="multipleQuizSubmit_main_middle">
+            <div>
+                <p class = "click">1</p>
+                <input type="text" id="multipleQuizSubmit_answer_1" placeholder="답안을 입력하세요">
+            </div>
+            <div>
+                <p class = "click">2</p>
+                <input type="text" id="multipleQuizSubmit_answer_2" placeholder="답안을 입력하세요">
+            </div>
+            <div>
+                <p class = "click">3</p>
+                <input type="text" id="multipleQuizSubmit_answer_3" placeholder="답안을 입력하세요">
+            </div>
+            <div>
+                <p class = "click">4</p>
+                <input type="text" id="multipleQuizSubmit_answer_4" placeholder="답안을 입력하세요">
+            </div>
+        </div>
+        <div id="multipleQuizSubmit_main_bottom">
+            <button id="multipleQuiz_submit">제출하기</button>
+        </div>
+    </div>
+</div>
+`
+let click = document.getElementsByClassName('click');
+let problemButton = document.getElementById('multipleQuiz_submit')
+    let content = document.getElementById('multipleQuizSubmit_valueSubmit')
+    let quiz1 = document.getElementById('multipleQuizSubmit_answer_1')
+    let quiz2 = document.getElementById('multipleQuizSubmit_answer_2')
+    let quiz3 = document.getElementById('multipleQuizSubmit_answer_3')
+    let quiz4 = document.getElementById('multipleQuizSubmit_answer_4')
+
+    click[0].addEventListener('click', clickFunction)
+    click[1].addEventListener('click', clickFunction)
+    click[2].addEventListener('click', clickFunction)
+    click[3].addEventListener('click', clickFunction)
+    problemButton.addEventListener('click', problemButtonFunction)
+
+    function clickFunction(e) {
+        for(let i = 0; i < 4; i++)
+        click[i].classList.remove('view')
+        e.target.classList.add('view')
+
+      //  console.log(e.target)
+        answerElement = e.target;
+    }
+
+
+    function problemButtonFunction () {
+                
+        for(let i = 0; i < 4; i++) {
+            if(click[i].classList.contains('view') !== null)
+            {
+                break;
+            }
+            if(i == 3) {
+                alert('답을 설정하지 않았습니다!')
+                return;
+            }
+        }
+        console.log('a')
+        let answer = answerElement.parentNode.childNodes[3].value
+
+    axios.post('http://52.78.227.70:5000/problem', {
+        "edits": [
+            {
+                "content" :  content.value,
+                "answer" : answer,
+                "choices" : [
+                    quiz1.value, quiz2.value, quiz3.value, quiz4.value
+                ]
+            }
+        ]
+    },  {headers: { "Content-Type": "application/json",
+    "Authorization": "Bearer " + token }
+})
+    .then(() => {
+        alert("문제 제출에 성공하셨습니다!")
+    })
+}
+}
 
 function timeSetFunction() {
     main.innerHTML = `
@@ -37,13 +131,13 @@ function timeSetFunction() {
             </div>
         </div>
         <div id="userControl_main_bottom">
-            <button id = "userControl_main_button">제출하기</button>
+            <button id = "userControl_submit">제출하기</button>
         </div>
     </div>
 </div> 
     `
 
-    let userControlButton = document.getElementById('userControl_main_button')
+    let userControlButton = document.getElementById('userControl_submit')
     userControlButton.addEventListener('click', userControlButtonFunction)
 
     function userControlButtonFunction() {
@@ -63,8 +157,13 @@ function timeSetFunction() {
             "end" : day + " " + end,
         },  {headers: { "Content-Type": "application/json",
         "Authorization": "Bearer " + token }
-    },)
-        .then(alert("시간 설정에 성공하셨습니다!"))
+    })
+        .then(() => {
+            alert("시간 설정에 성공하셨습니다!")
+        })
+        .catch(() => {
+            alert("시간 설정에 실패하셨습니다!")
+        })
     }
 }
 
@@ -230,6 +329,7 @@ function listKeyFunction() {
     )();
 }
 
+problem.addEventListener('click', problemFunction)
 listKey.addEventListener('click', listKeyFunction)
 timeSet.addEventListener('click', timeSetFunction)
 booth.addEventListener('click', boothFunction)

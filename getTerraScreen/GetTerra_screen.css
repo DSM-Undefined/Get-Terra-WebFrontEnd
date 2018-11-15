@@ -696,7 +696,6 @@ body {
     font-size: 40px;
 }
 
-<<<<<<< HEAD
 #userControl_submit {
     border: 0;
     border-radius: 10px;
@@ -708,8 +707,8 @@ body {
 }
 
 #multipleQuizSubmit_wrapper {
-    width: 1000px;
-    height: 520px;
+    width: 95%;
+    height: 95%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 2px #c3c3c3;
@@ -1189,9 +1188,8 @@ body {
 
 #mainPage_gotoResult_wrapper > div:nth-child(2) > div > p {
     display: inline-block;
-=======
-#userControl_main_bottom > button {
-    width: 20%;
-    height: 50px;
->>>>>>> ee378e4b9db25323fe4a87bfb323f998802edcfe
+}
+
+.view {
+    background-color: #a1e5a9;
 }
