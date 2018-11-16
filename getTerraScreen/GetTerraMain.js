@@ -88,11 +88,10 @@ function priceFunction() {
         })
         .then(response => {
             console.log(response)
-            resultList = response.data.list
-            /*resultList.sort(function (a, b) {
+            resultList = response.data
+            resultList.sort(function (a, b) {
                 return a.ownCount - b.ownCount
-            })*/
-
+            })
             grade1.childNodes[0].nodeValue = resultList[0].ownCount
             circle1.style.backgroundColor = resultList[0].teamId
             gradeper1.childNodes[0].nodeValue = resultList[0].percent
@@ -105,7 +104,6 @@ function priceFunction() {
             grade4.childNodes[0].nodeValue = resultList[3].ownCount
             circle4.style.backgroundColor = resultList[3].teamId
             gradeper4.childNodes[0].nodeValue = resultList[3].percent
-
         })
 }
 
