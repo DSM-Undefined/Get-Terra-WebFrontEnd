@@ -87,10 +87,11 @@ function priceFunction() {
             }
         })
         .then(response => {
+            console.log(response)
             resultList = response.data.list
-            resultList.sort(function (a, b) {
+            /*resultList.sort(function (a, b) {
                 return a.ownCount - b.ownCount
-            })
+            })*/
 
             grade1.childNodes[0].nodeValue = resultList[0].ownCount
             circle1.style.backgroundColor = resultList[0].teamId
@@ -148,7 +149,7 @@ function stateFunction() {
     .then(response => {
         l = 0;
         console.log(response)
-        response.data.map(i => {
+        response.data.booths.map(i => {
             l++;
             stringHtml[ Math.floor((l-1)/4) ] +=
             `<div style = "background-color: ${i.ownTeam};" class="situation_club">${i.boothName}</div>`
@@ -173,7 +174,7 @@ function stateFunction() {
         .then(response => {
             l = 0;
             console.log(response)
-            response.data.map(i => {
+            response.data.booths.map(i => {
                 l++;
                 stringHtml[ Math.floor((l-1)/4) ] +=
                 `<div class="situation_club">${i.boothName}</div>`
@@ -261,7 +262,7 @@ let problemButton = document.getElementById('multipleQuiz_submit')
         console.log('a')
         let answer = answerElement.parentNode.childNodes[3].value
 
-    axios.post('http://http://ec2.istruly.sexy:5000/problem', {
+    axios.post('http://ec2.istruly.sexy:5000/problem', {
         "edits": [
             {
                 "content" :  content.value,
@@ -329,7 +330,7 @@ function timeSetFunction() {
         console.log("start " + day + " " + start,
                     "    end " + day + " " + end,)
 
-        axios.put('http://http://ec2.istruly.sexy:5000/set-time', {
+        axios.put('http://ec2.istruly.sexy:5000/set-time', {
             "start" : day + " " + start,
             "end" : day + " " + end,
         },  {headers: { "Content-Type": "application/json",
