@@ -175,7 +175,7 @@ function stateFunction() {
             response.data.booths.map(i => {
                 l++;
                 stringHtml[ Math.floor((l-1)/4) ] +=
-                `<div class="situation_club">${i.boothName}</div>`
+                `<div "background-color: ${i.ownTeam};" class="situation_club">${i.boothName}</div>`
             
             })
             wapper1.innerHTML = stringHtml[0]
