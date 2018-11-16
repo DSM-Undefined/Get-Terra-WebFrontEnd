@@ -88,9 +88,9 @@ function priceFunction() {
         })
         .then(response => {
             console.log(response)
-            resultList = response.data
+            resultList = response.data.slice(1, 5)
             resultList.sort(function (a, b) {
-                return a.ownCount - b.ownCount
+                return b.ownCount - a.ownCount
             })
             grade1.childNodes[0].nodeValue = resultList[0].ownCount
             circle1.style.backgroundColor = resultList[0].teamId
@@ -175,7 +175,7 @@ function stateFunction() {
             response.data.booths.map(i => {
                 l++;
                 stringHtml[ Math.floor((l-1)/4) ] +=
-                `<div "background-color: ${i.ownTeam};" class="situation_club">${i.boothName}</div>`
+                `<div style = "background-color: ${i.ownTeam};" class="situation_club">${i.boothName}</div>`
             
             })
             wapper1.innerHTML = stringHtml[0]
